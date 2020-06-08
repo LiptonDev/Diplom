@@ -1,0 +1,32 @@
+﻿<UserControl 
+    x:Class="Diplom.Dialogs.RouteEditorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Diplom.Controls"
+    xmlns:vm="clr-namespace:Diplom.Dialogs"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance Type=vm:RouteEditorViewModel, IsDesignTimeCreatable=True}">
+
+    <StackPanel>
+        <TextBlock Style="{StaticResource IsEditModeTextBlock}"/>
+
+        <TextBox Text="{Binding EditableObject.From, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                 material:HintAssist.Hint="Место отправления"/>
+
+        <TextBox Text="{Binding EditableObject.To, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                 material:HintAssist.Hint="Место назначения"/>
+
+        <TextBox Text="{Binding EditableObject.Description, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                 AcceptsReturn="True"
+                 material:HintAssist.Hint="Описание"/>
+
+        <CheckBox IsChecked="{Binding EditableObject.Status, UpdateSourceTrigger=PropertyChanged}"
+                  Margin="5"
+                  Content="Завершено"/>
+
+        <controls:EditorButtons/>
+    </StackPanel>
+</UserControl>

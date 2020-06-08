@@ -1,0 +1,56 @@
+﻿<UserControl 
+    x:Class="Diplom.Dialogs.TruckSelectorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:Diplom.Dialogs" 
+    xmlns:controls="clr-namespace:Diplom.Controls"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance Type=vm:TruckSelectorViewModel, IsDesignTimeCreatable=True}">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Выбор машины"
+                   Style="{StaticResource TitleBlock}"/>
+
+        <ListBox ItemsSource="{Binding Items}"
+                 SelectedItem="{Binding SelectedItem}"
+                 Grid.Row="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="{Binding CarModel, StringFormat='Модель: {0}'}"
+                                   Style="{StaticResource MaterialDesignSubheadingTextBlock}"
+                                   VerticalAlignment="Center"
+                                   Padding="5"/>
+
+                        <controls:CarNumber Number="{Binding CarNumber}"
+                                            Region="{Binding CarNumberRegion}"
+                                            Grid.Column="1"/>
+
+                        <Separator Grid.Row="1"
+                                   Grid.ColumnSpan="2"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <controls:SelectorButtons Grid.Row="2"/>
+    </Grid>
+</UserControl>
