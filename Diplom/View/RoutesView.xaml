@@ -57,7 +57,9 @@
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Место отправления" DisplayMemberBinding="{Binding From}"/>
+                        <GridViewColumn Header="Дата отправления" DisplayMemberBinding="{Binding FromDate, StringFormat='{}{0:dd.MM.yyyy}'}"/>
                         <GridViewColumn Header="Место назначения" DisplayMemberBinding="{Binding To}"/>
+                        <GridViewColumn Header="Дата прибытия" DisplayMemberBinding="{Binding ToDate, StringFormat='{}{0:dd.MM.yyyy}'}"/>
                         <GridViewColumn Header="Описание" DisplayMemberBinding="{Binding Description}"/>
                         <GridViewColumn Header="Статус" DisplayMemberBinding="{Binding Status, Converter={StaticResource RouteStatusConverter}}"/>
                         <GridViewColumn Header="Модель автомобиля" DisplayMemberBinding="{Binding Truck.CarModel}"/>

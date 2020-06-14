@@ -16,8 +16,14 @@
         <TextBox Text="{Binding EditableObject.From, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
                  material:HintAssist.Hint="Место отправления"/>
 
+        <DatePicker SelectedDate="{Binding EditableObject.FromDate, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                    material:HintAssist.Hint="Дата отправления"/>
+        
         <TextBox Text="{Binding EditableObject.To, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
                  material:HintAssist.Hint="Место назначения"/>
+
+        <DatePicker SelectedDate="{Binding EditableObject.ToDate, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                    material:HintAssist.Hint="Дата прибытия"/>
 
         <TextBox Text="{Binding EditableObject.Description, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
                  AcceptsReturn="True"

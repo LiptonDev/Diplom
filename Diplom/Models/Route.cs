@@ -16,6 +16,16 @@ namespace Diplom.Models
         public int? TruckId { get; set; }
 
         /// <summary>
+        /// Дата отправления.
+        /// </summary>
+        public DateTime? FromDate { get; set; }
+
+        /// <summary>
+        /// Дата прибытия.
+        /// </summary>
+        public DateTime? ToDate { get; set; }
+
+        /// <summary>
         /// Место отправления.
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "Введите место отправления")]

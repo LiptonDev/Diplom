@@ -19,6 +19,7 @@
                 <ResourceDictionary Source="pack://application:,,,/Styles/GroupBox.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Styles/Buttons.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Styles/ComboBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Styles/DatePicker.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
