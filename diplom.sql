@@ -11,7 +11,7 @@
  Target Server Version : 50525
  File Encoding         : 65001
 
- Date: 08/06/2020 09:47:53
+ Date: 17/06/2020 00:27:07
 */
 
 SET NAMES utf8mb4;
@@ -36,6 +36,8 @@ CREATE TABLE `drivers`  (
 DROP TABLE IF EXISTS `routes`;
 CREATE TABLE `routes`  (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id',
+  `fromDate` datetime NULL DEFAULT NULL COMMENT 'Дата отправления',
+  `toDate` datetime NULL DEFAULT NULL COMMENT 'Дата прибытия',
   `truckId` int(11) NULL DEFAULT NULL COMMENT 'Машина на маршруте',
   `from` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Город отправления',
   `to` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Город назначения',
@@ -88,7 +90,7 @@ CREATE TABLE `trucks`  (
   INDEX `semitrailerId`(`semitrailerId`) USING BTREE,
   CONSTRAINT `trucks_ibfk_1` FOREIGN KEY (`driverId`) REFERENCES `drivers` (`id`) ON DELETE SET NULL ON UPDATE NO ACTION,
   CONSTRAINT `trucks_ibfk_2` FOREIGN KEY (`semitrailerId`) REFERENCES `semitrails` (`id`) ON DELETE SET NULL ON UPDATE NO ACTION
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for users
